@@ -63,6 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const whatsappUrl = `https://wa.me/919154355592?text=${encodeURIComponent(whatsappText)}`;
             window.open(whatsappUrl, '_blank');
             
+            const toast = document.getElementById('toast');
+            if (toast) {
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000);
+            }
+            
             // Reset form
             contactForm.reset();
         });

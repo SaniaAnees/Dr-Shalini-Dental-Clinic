@@ -542,9 +542,8 @@ img, iframe {
 }
 
 .branch-number {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
+    display: inline-block;
+    margin-bottom: 0.75rem;
     background: var(--primary-light);
     color: var(--primary-dark);
     padding: 0.25rem 0.75rem;
@@ -817,9 +816,11 @@ img, iframe {
 /* Toast */
 .toast {
     position: fixed;
-    bottom: -100px;
+    bottom: 30px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 150px);
+    opacity: 0;
+    visibility: hidden;
     background: white;
     padding: 1rem 2rem;
     border-radius: var(--radius-md);
@@ -828,11 +829,13 @@ img, iframe {
     align-items: center;
     gap: 1rem;
     z-index: 2000;
-    transition: bottom 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .toast.show {
-    bottom: 30px;
+    transform: translate(-50%, 0);
+    opacity: 1;
+    visibility: visible;
 }
 
 .toast-icon {
@@ -867,9 +870,9 @@ img, iframe {
         height: calc(100vh - 80px);
         background: white;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         transition: var(--transition);
-        padding: 2rem;
+        padding: 4rem 2rem 2rem 2rem;
         box-shadow: var(--shadow-md);
     }
     
